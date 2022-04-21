@@ -225,14 +225,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(help='sub-command help')
 
-    convert = subparsers.add_parser("convert",
-                                    help="Convert mp3 audio to wav format.")
-    convert.add_argument('--path_input', type=str, required=True,
-                         help="Path of the corpus with mp3 files.")
-    convert.add_argument('--path_output', type=str, required=True,
-                         help="Path to store the converted audio files.")
-    convert.set_defaults(func=convert_mp3towav)
-
     create_audio = subparsers.add_parser("create_audio",
                                          help="Create audio per sentences from xml and wav and store the info in a tsv file. "
                                               "Make sure the transcriptions are in /trans and wav in /wav")
